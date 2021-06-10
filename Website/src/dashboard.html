@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <h1>Dashboard</h1>
+    <div>
+      <h3>Hello</h3>
+      <hr />
+      <section>
+          {% for guild in guilds %}
+          <a href="/dashboard/{{guild.id}}">
+            {% if guild.icon_url is not none %}
+            <img src="{{guild.icon_url}}"/>
+            {% else %}
+            <img
+              src="https://discordapp.com/assets/322c936a8c8be1b803cd94861bdfa868.png"
+            />
+            {% endif %}
+          </a>
+          <br />
+          {{ guild.name }}
+        </div>
+        {% endfor %}
+      </section>
+    </div>
+  </body>
+</html>
